@@ -3,10 +3,13 @@
 pipeline {
     
     
-    agent {
+    agent any
+    
+    /*
+    {
         label 'CLASSIC'
     }
-    
+    */
     /*
     environment {
         commitReference = ''
