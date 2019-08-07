@@ -33,6 +33,11 @@ pipeline {
         
         
         stage('Build') {
+            
+            agent {
+                docker { image 'node:7-alpine' }
+            }
+            
             steps {
                 buildDbProject()
                // buildProject()
