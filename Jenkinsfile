@@ -71,7 +71,7 @@ pipeline {
 def preparePipeline() {
     commitReference = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
     echo "commitReference=${commitReference}"
-    echo sh('ls .')
+    //echo sh('ls .')
 }
 
 def buildDbProject() {
