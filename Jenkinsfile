@@ -3,9 +3,7 @@
 pipeline {
     
     
-    agent{
-        label 'win-agent'
-    }
+    agent any
     
     /*
     {
