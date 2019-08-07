@@ -2,10 +2,12 @@
 
 pipeline {
     
-    /*
+    
     agent {
         label 'CLASSIC'
     }
+    
+    /*
     environment {
         commitReference = ''
         // NOTE : Those credentials need to be added to your jenkins instance's secrets manually before the first build.
