@@ -1,6 +1,8 @@
 #!/usr/bin/env groovy
 
 pipeline {
+    
+    /*
     agent {
         label 'CLASSIC'
     }
@@ -15,12 +17,16 @@ pipeline {
         NEXUS_RELEASE_REPO = credentials('nexus-release-repo')      // URL of your Maven Release repository.
         NEXUS_SNAPSHOTS_REPO = credentials('nexus-snapshot-repo')   // URL of your Maven Snapshot repository.
     }
+    
+    */
     stages {
         stage('Pipeline Preparation') {
             steps {
                 preparePipeline()
             }
         }
+        
+        /*
         stage('Build') {
             steps {
                 buildProject()
@@ -46,7 +52,11 @@ pipeline {
                     sh "make push DOCKER_REGISTRY=${env.DOCKER_REPO}"
                 }
             }
+            
+            
         }
+        
+        */
     }
 }
 
