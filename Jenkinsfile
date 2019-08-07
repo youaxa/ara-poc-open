@@ -75,6 +75,7 @@ def preparePipeline() {
 }
 
 def buildDbProject() {
+    sh('chmod +x ./db/manage-db.sh')
     sh('./db/manage-db.sh create my/db/path')
 }
 def buildProject() {
