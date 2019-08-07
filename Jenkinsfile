@@ -31,13 +31,16 @@ pipeline {
             }
         }
         
-        /*
+        
         stage('Build') {
             steps {
-                buildProject()
-                stash name: 'ara-jar', includes: "final/target/*.jar"
+                buildDbProject()
+               // buildProject()
+               // stash name: 'ara-jar', includes: "final/target/*.jar"
             }
         }
+        
+        /*
         stage('Quality Scan') {
             steps {
                 qualityScan()
@@ -68,8 +71,12 @@ pipeline {
 def preparePipeline() {
     commitReference = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
     echo "commitReference=${commitReference}"
+    echo "sh('ls .')"
 }
 
+def buildDbProject() {
+    sh('./db/manage-db.sh create my/db/path')
+}
 def buildProject() {
     def installOrDeploy = 'install'
     def dbUsr = "${env.DB_IT_USR}"
